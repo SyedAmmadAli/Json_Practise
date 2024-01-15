@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Pracise</title>
+</head>
+
+<body>
+
+    <h1>Please check console</h1>
+
+    <form>
+
+        <label for="">Enter Your Email</label>
+        <input type="text" id="u_name"> <br><br>
+
+        <label for="">Enter Your Password</label>
+        <input type="password" id="u_pass"><br><br>
+
+       <input type="submit" value="Submit" onclick="form_Valu()">
+
+       
+
+    </form>
+
+    <script>
+
+        var abc = {
+            "user1": {
+                "useremail": "user1@abc.com",
+                "userpass": "abc123"
+            },
+            "user2": {
+                "useremail": "user2@abc.com",
+                "userpass": "user2pass"
+            },
+            "user3": {
+                "useremail": "user3@abc.com",
+                "userpass": "user3pass"
+            },
+            "user4": {
+                "useremail": "user4@abc.com",
+                "userpass": "user4pass"
+            },
+            "user5": {
+                "useremail": "user5@abc.com",
+                "userpass": "user5pass"
+            },
+            "user6": {
+                "useremail": "user6@abc.com",
+                "userpass": "user6pass"
+            },
+            "user7": {
+                "useremail": "user7@abc.com",
+                "userpass": "user7pass"
+            },
+            "user8": {
+                "useremail": "user8@abc.com",
+                "userpass": "user8pass"
+            },
+            "user9": {
+                "useremail": "user9@abc.com",
+                "userpass": "user9pass"
+            },
+            "user10": {
+                "useremail": "user10@abc.com",
+                "userpass": "user10pass"
+            },
+        };
+
+        var user_Details = JSON.stringify(abc); 
+
+        localStorage.setItem('userData',user_Details);
+
+
+        // function form_Valu(){
+
+        //     var xyz = document.getElementById('u_name').value;
+        //     var ijk = document.getElementById('u_name').value;
+           
+        //     console.log(xyz)
+
+        //     localStorage.setItem(user1,{xyz:ijk});
+
+        // }
+
+
+
+    </script>
+</body>
+
+</html>

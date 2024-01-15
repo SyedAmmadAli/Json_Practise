@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+
+<body>
+
+    <form action="#">
+
+    <label for="">Enter Your Email</label>
+    <input type="text" id="u_name"> <br><br>
+
+    <label for="">Enter Your Password</label>
+    <input type="password" id="u_pass"><br><br>
+
+    <input type="submit" value="Submit" onclick="log_Valu()">
+
+    <p id="login_Status"></p>
+
+    </form>
+
+
+    <script>
+
+        user_Database = localStorage.getItem("userData");
+        data_Parse = JSON.parse(user_Database);
+
+        // var user_em = "user4@abc.com";
+        // var user_pas = "user4pass";
+
+        // if (user_em == data_Parse.user1.useremail) {
+
+        //     console.log("User Matched")
+        // }
+        // else {
+        //     console.log("User Not Matched")
+        // }
+
+        // document.write(data_Parse.user1.useremail + "<br><br>")
+
+        // for (var key in data_Parse) {
+
+        //     document.write(data_Parse[key].useremail + ' <br>');
+
+        //     document.write(typeof (data_Parse[key].useremail) + ' <br>');
+
+        //     document.write(data_Parse[key].userpass + ' <br>');
+
+        //     if (user_em == data_Parse[key].useremail && user_pas == data_Parse[key].userpass) {
+
+        //         document.write("User Successfully Login <br>");
+        //         break;
+
+        //     }
+        //     else {
+        //         document.write("User Login Failed <br><br>");
+        //     }
+
+        // }
+
+        function log_Valu() {
+
+            var user_Email = document.getElementById('u_name').value;
+            var user_Pass = document.getElementById('u_pass').value;
+            var login_Successful = false ;
+
+
+            console.log(user_Email);
+            console.log(user_Pass);
+
+            for (var key in data_Parse) {
+
+                // document.write(data_Parse[key].useremail + ' <br>');
+
+                // document.write(typeof (data_Parse[key].useremail) + ' <br>');
+
+                // document.write(data_Parse[key].userpass + ' <br>');
+
+                if (user_Email == data_Parse[key].useremail && user_Pass == data_Parse[key].userpass) {
+
+                    // document.write("User Successfully Login <br>");
+                    var login_Successful = true;
+                    
+                    break;
+
+                }
+
+            }
+
+            if (login_Successful == true){
+
+                document.getElementById('login_Status')
+                document.getElementById('login_Status').innerHTML = "User Login Successful";
+            }
+            else{
+                document.getElementById('login_Status').innerHTML = "User Login Failed";
+            }
+
+        }
+
+        console.log(user_Database);
+        console.log(data_Parse);
+
+    </script>
+</body>
+
+</html>
+
+<!-- && user_pas == data_Parse[key].userpass -->
+
+<!-- data_Parse[key].username -->
